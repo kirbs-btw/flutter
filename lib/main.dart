@@ -41,7 +41,23 @@ class _MyHomePageState extends State<MyHomePage> {
   Widget build(BuildContext context) {
 
     return Scaffold(
-      body: Center(
+      bottomNavigationBar: BottomAppBar(
+        color: Colors.lightBlue,
+        child:
+        Padding(
+          padding: EdgeInsets.all(15), // how to center the font without that ??
+          child: Text(
+            'Search',
+            style: TextStyle(
+              fontFamily: 'GothamBlack',
+              color: Colors.white,
+              fontSize: 25,
+              ),
+            ),
+          ),
+        ),
+      body:
+        Center(
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: <Widget>[
@@ -54,7 +70,7 @@ class _MyHomePageState extends State<MyHomePage> {
 
             ),
             const Text(
-              "Bastian Lipka",
+              "here is kirbs-btw work",
               style: TextStyle(
                 fontSize: 25,
                 fontFamily: 'GothamHTF',
@@ -69,11 +85,11 @@ class _MyHomePageState extends State<MyHomePage> {
                       children: <Widget>[
                         RaisedButton(
                           child: const Text('Project 1'),
-                          onPressed: null,
+                          onPressed: test,
                         ),
                         RaisedButton(
                           child: const Text('Project 2'),
-                          onPressed: null,
+                          onPressed: test,
                         ),
                       ],
                     ),
@@ -81,11 +97,11 @@ class _MyHomePageState extends State<MyHomePage> {
                       children: <Widget>[
                         RaisedButton(
                           child: const Text('Project 3'),
-                          onPressed: null,
+                          onPressed: test,
                         ),
                         RaisedButton(
                           child: const Text('Project 4'),
-                          onPressed: null,
+                          onPressed: test,
                         ),
                       ],
                     ),
@@ -97,4 +113,8 @@ class _MyHomePageState extends State<MyHomePage> {
       ),
     );
   }
+}
+
+void test() {
+  var name = "sir";
 }
