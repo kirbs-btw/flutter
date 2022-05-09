@@ -1,6 +1,16 @@
 import 'package:flutter/material.dart';
+import 'package:partyfinder/pages/page_one/page_one.dart';
 
-void main() => runApp(MyApp());
+void main() => runApp(MaterialApp(
+  initialRoute: '/home',
+  routes: {
+    '/home': (context) => MyHomePage(),
+    //'/chart': (context) => Chart(),
+    },
+  )
+);
+
+// void main() => runApp(MyApp());
 
 class MyApp extends StatelessWidget {
   // This widget is the root of your application.
