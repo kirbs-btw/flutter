@@ -19,30 +19,36 @@ class _PageOne extends State<PageOne> {
   Widget build(BuildContext context) {
 
     return Scaffold(
-      body: Center(
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: <Widget>[
-            const Text(
-              "Page 1",
-              style: TextStyle(
-                fontSize: 75,
-                fontFamily: 'GothamBlack',
+      backgroundColor: Colors.teal,
+      body: Container(
+        child: Center(
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: <Widget>[
+              const Text(
+                "Page 1",
+                style: TextStyle(
+                  fontSize: 75,
+                  fontFamily: 'GothamBlack',
+                  backgroundColor: Colors.teal,
+                  color: Colors.white,
+                ),
               ),
-            ),
-            RaisedButton(
-              child: const Text('Back'),
-              onPressed: (){
-                Navigator.pushNamed(context, '/home');
-              },
-            ),
-          ],
+              Container(
+                margin: EdgeInsets.all(50),
+                child: RaisedButton(
+                  padding: EdgeInsets.fromLTRB(50, 15, 50, 15),
+                  child: const Text('Back'),
+                  onPressed: (){
+                    Navigator.pushNamed(context, '/home');
+                  },
+                ),
+              ),
+            ],
+          ),
         ),
       ),
     );
   }
 }
 
-void test() {
-  var name = "sir";
-}
