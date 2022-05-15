@@ -4,6 +4,8 @@ import 'dart:async';
 import 'package:flutter/material.dart';
 import 'package:partyfinder/pages/page_one/page_one.dart';
 import 'package:partyfinder/pages/page_two/page_two.dart';
+import 'package:partyfinder/pages/page_three/page_three.dart';
+
 
 void main() => runApp(MaterialApp(
   initialRoute: '/home',
@@ -11,6 +13,7 @@ void main() => runApp(MaterialApp(
     '/home': (context) => MyHomePage(),
     '/page_one': (context) => PageOne(),
     '/page_two': (context) => PageTwo(),
+    '/page_three': (context) => PageThree(),
     },
   )
 );
@@ -116,7 +119,9 @@ class _MyHomePageState extends State<MyHomePage> {
                       children: <Widget>[
                         RaisedButton(
                           child: const Text('Project 3'),
-                          onPressed: test,
+                          onPressed: (){
+                            Navigator.pushNamed(context, '/page_three');
+                          },
                         ),
                         RaisedButton(
                           child: const Text('Project 4'),
