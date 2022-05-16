@@ -11,12 +11,16 @@ class PageThree extends StatefulWidget {
   _PageThree createState() => _PageThree();
 }
 
+
+
 class _PageThree extends State<PageThree> {
+  final GlobalKey<FormState> _formKey = GlobalKey<FormState>();
 
   @override
   Widget build(BuildContext context) {
 
     return Scaffold(
+      key: _formKey,
       body: Center(
         child: Column(
           mainAxisAlignment: MainAxisAlignment.spaceEvenly,
@@ -34,6 +38,29 @@ class _PageThree extends State<PageThree> {
                 onPressed: (){
                   Navigator.pushNamed(context, '/home');
                 },
+              ),
+            ),
+            Form(
+              child: Column(
+                children: <Widget>[
+                  TextFormField(
+                    decoration: const InputDecoration(
+                      hintText: 'email...',
+                    ),
+                    validator: (String value) {
+                      if (value == null || value.isEmpty) {
+                        return 'Please enter some text';
+                      }
+                      return null;
+                    },
+                  ),
+                  RaisedButton(
+                    onPressed: (){
+                     print("Hi");
+                    },
+                    child: const Text('Submit'),
+                  ),
+                ],
               ),
             ),
           ],
