@@ -3,9 +3,6 @@ import 'package:flutter/material.dart';
 import 'package:partyfinder/main.dart';
 
 class PageThree extends StatefulWidget {
-  PageThree({Key key, this.title}) : super(key: key);
-
-  final String title;
 
   @override
   _PageThree createState() => _PageThree();
@@ -14,6 +11,19 @@ class PageThree extends StatefulWidget {
 
 
 class _PageThree extends State<PageThree> {
+  String inputText = '';
+
+  void updateText(String text){
+    inputText = text;
+  }
+
+  void processInput(){
+    print(inputText);
+
+  }
+
+
+
   final GlobalKey<FormState> _formKey = GlobalKey<FormState>();
 
   @override
@@ -43,20 +53,20 @@ class _PageThree extends State<PageThree> {
             Form(
               child: Column(
                 children: <Widget>[
-                  TextFormField(
-                    decoration: const InputDecoration(
-                      hintText: 'email...',
+                  SizedBox(
+                    width: MediaQuery.of(context).size.width * 0.8,
+                    child: TextField(
+                      onChanged: updateText,
+                      decoration: InputDecoration(
+                        border: OutlineInputBorder(),
+                        hintText: 'Enter something',
+                      ),
                     ),
-                    validator: (String value) {
-                      if (value == null || value.isEmpty) {
-                        return 'Please enter some text';
-                      }
-                      return null;
-                    },
                   ),
+
                   RaisedButton(
                     onPressed: (){
-                     print("Hi");
+                     processInput();
                     },
                     child: const Text('Submit'),
                   ),
