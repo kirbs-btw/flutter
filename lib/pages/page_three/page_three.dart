@@ -12,6 +12,8 @@ class PageThree extends StatefulWidget {
 
 class _PageThree extends State<PageThree> {
   String inputText = '';
+  List<Widget> _NewPage = [];
+
 
   void updateText(String text){
     inputText = text;
@@ -19,9 +21,28 @@ class _PageThree extends State<PageThree> {
 
   void processInput(){
     print(inputText);
-
+    setState(() {
+      _NewPage.add(_newText());
+    });
   }
 
+  void clearWidgets(){
+    setState(() {
+      _NewPage = [];
+    });
+  }
+
+  Widget _newText(){
+    return Container(
+      child: Text(
+        inputText,
+        style: TextStyle(
+          fontFamily: 'GothamHtf',
+          fontSize: 20,
+        ),
+      ),
+    );
+  }
 
 
   final GlobalKey<FormState> _formKey = GlobalKey<FormState>();
@@ -70,12 +91,27 @@ class _PageThree extends State<PageThree> {
                     },
                     child: const Text('Submit'),
                   ),
+                  RaisedButton(
+                    onPressed: (){
+                      clearWidgets();
+                    },
+                    child: const Text('clear'),
+                  ),
                 ],
               ),
             ),
+            Container(
+              width: MediaQuery.of(context).size.width * 0.9,
+              height: MediaQuery.of(context).size.height * 0.3,
+              child: ListView.builder(
+                itemCount: _NewPage.length,
+                itemBuilder: (context, index){
+                  return _NewPage[index];
+                  },
+                ),
+            ),
           ],
         ),
-
       )
 
     );
