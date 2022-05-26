@@ -1,10 +1,12 @@
 import 'dart:io';
+//import 'dart:js';
 import 'dart:ui';
 import 'dart:async';
 import 'package:flutter/material.dart';
 import 'package:partyfinder/pages/page_one/page_one.dart';
 import 'package:partyfinder/pages/page_two/page_two.dart';
 import 'package:partyfinder/pages/page_three/page_three.dart';
+import 'package:partyfinder/pages/page_four/page_four.dart';
 
 
 void main() => runApp(MaterialApp(
@@ -14,6 +16,7 @@ void main() => runApp(MaterialApp(
     '/page_one': (context) => PageOne(),
     '/page_two': (context) => PageTwo(),
     '/page_three': (context) => PageThree(),
+    '/page_four': (context)  => PageFour(),
     },
   )
 );
@@ -125,7 +128,9 @@ class _MyHomePageState extends State<MyHomePage> {
                         ),
                         RaisedButton(
                           child: const Text('Project 4'),
-                          onPressed: test,
+                          onPressed: (){
+                            Navigator.pushNamed(context, '/page_four');
+                          },
                         ),
                       ],
                     ),
