@@ -8,8 +8,6 @@ class PageThree extends StatefulWidget {
   _PageThree createState() => _PageThree();
 }
 
-
-
 class _PageThree extends State<PageThree> {
   String inputText = '';
   List<Widget> _NewPage = [];

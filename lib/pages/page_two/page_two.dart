@@ -46,6 +46,7 @@ class _PageTwo extends State<PageTwo> {
                     //mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                     children: <Widget>[
                       Container(
+                        // change to real relative measures
                         margin: EdgeInsets.fromLTRB(25,50,0,10),
                         child: Text(
                           "Your life",
